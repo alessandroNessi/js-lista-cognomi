@@ -1,7 +1,7 @@
 document.getElementById("userInput").addEventListener('keyup', addSecondName);
 var secondNames=["Rossi", "Bruni", "Madrigali","Pignataro","Nessi","Lodigiani", "Mastrobattista", "D'agelo"];
 function addSecondName(event){
-    if(event.code=="Enter"){
+    if(event.code=="Enter"||event=="1"){
         userInput=document.getElementById("userInput").value;
         document.getElementById("userInput").value="";
         userInput = userInput.toLowerCase();
