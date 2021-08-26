@@ -25,6 +25,15 @@ function addSecondName(event){
         if(endFunc==false){
             secondNames.push(userInput);
             secondNames.sort;
+            let ul = document.getElementById("results__output");
+            ul.innerHTML="";
+            for (i = 0; i < secondNames.length; i++) {
+                let li = document.createElement('li');
+                li.appendChild(document.createTextNode(secondNames[i]));
+                ul.appendChild(li);
+            }
+        }else{
+            alert("The second name contains some forbidden chars")
         }
     }
 }
