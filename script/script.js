@@ -24,14 +24,20 @@ function addSecondName(event){
         }
         if(endFunc==false){
             secondNames.push(userInput);
-            secondNames.sort;
+            secondNames.sort();
+            let index=secondNames.indexOf(userInput);
             let ul = document.getElementById("results__output");
             ul.innerHTML="";
             for (i = 0; i < secondNames.length; i++) {
                 let li = document.createElement('li');
-                li.appendChild(document.createTextNode(secondNames[i]));
+                if(i==index){
+                    li.appendChild(document.createTextNode((i+1) + " " + secondNames[i]));
+                }else{
+                    li.appendChild(document.createTextNode(secondNames[i]));
+                }
                 ul.appendChild(li);
             }
+            document.getElementById("results__output").getElementsByTagName("li")[index].style.backgroundColor = "green";
         }else{
             alert("The second name contains some forbidden chars")
         }
